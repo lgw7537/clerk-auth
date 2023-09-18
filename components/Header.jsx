@@ -1,6 +1,5 @@
 import { UserButton, auth } from '@clerk/nextjs'
 import Link from 'next/link'
-import React from 'react'
 
 const Header = () => {
   const { userId } = auth()
@@ -17,7 +16,6 @@ const Header = () => {
 
           <div className="flex items-center font-bold">
             {!userId ? (
-              // 로그인이 안된 경우
               <>
                 <Link
                   href="/sign-in"
@@ -34,6 +32,18 @@ const Header = () => {
               </>
             ) : (
               <>
+                <Link
+                  href="/repos"
+                  className="text-gray-300 hover:text-white mr-4"
+                >
+                  Repos
+                </Link>
+                <Link
+                  href="/courses"
+                  className="text-gray-300 hover:text-white mr-4"
+                >
+                  Courses
+                </Link>
                 <Link
                   href="/dashboard"
                   className="text-gray-300 hover:text-white mr-4"
@@ -57,5 +67,4 @@ const Header = () => {
     </>
   )
 }
-
 export default Header
