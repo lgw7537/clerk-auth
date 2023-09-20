@@ -1,7 +1,8 @@
+import { githubUsername } from '@/constants/constants'
 import Link from 'next/link'
 
 async function fetchRepoContents(name) {
-  const username = 'bradtraversy'
+  const username = githubUsername
   await new Promise((resolve) => setTimeout(resolve, 2000))
 
   const response = await fetch(
